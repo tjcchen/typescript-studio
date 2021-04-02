@@ -36,3 +36,16 @@ console.log(x[0].substring(1)); // print out 'ello'
 // x[3] = 'world';
 // error: Tuple type '[string, number]' of length '2' has no element at index '5'.
 // console.log(x[5].toString());
+// 6. Enum
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 1] = "Red";
+    Color[Color["Green"] = 2] = "Green";
+    Color["Blue"] = "blue";
+})(Color || (Color = {}));
+;
+var c = Color.Blue;
+console.log(c); // 4
+var colorName = Color[2];
+console.log(colorName); // 'Green'
+console.log(Color.Blue);
