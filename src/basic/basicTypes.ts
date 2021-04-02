@@ -19,3 +19,24 @@ let age: number = 37;
 let sentence: string = `Hello, my name is ${fullname}
   I'll be ${age + 1} years old next month.
 `;
+
+// 4. Array
+// Approach1: use the type of element followed by [] to denote an array of that element type:
+let list: number[] = [1, 2, 3];
+// Approach2: use a generic array type, Array<elemType>:
+let list1: Array<number> = [1, 2, 3];
+
+// 5. Tuple
+// Tuple types allow you to express an array with a fixed number of elements whose types are known,
+// but need not be the same
+// eg1: a value as a pair of a string and a number
+let x: [string, number];
+// initialize it
+x = ['hello', 10]; // ok
+// initialize it incorrectly, this will cast error
+// x = [10, 'hello']; // Error
+
+// ok
+console.log(x[0].substring(1)); // print out 'ello'
+// error - Property 'substring' does not exist on type 'number'.
+// console.log(x[1].substring(1));
