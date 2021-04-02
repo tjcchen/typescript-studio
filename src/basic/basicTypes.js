@@ -31,3 +31,8 @@ x = ['hello', 10]; // ok
 console.log(x[0].substring(1)); // print out 'ello'
 // error - Property 'substring' does not exist on type 'number'.
 // console.log(x[1].substring(1));
+// Accessing an element outside the set of known indices fails with an error
+// error: Tuple type '[string, number]' of length '2' has no element at index '3'.
+// x[3] = 'world';
+// error: Tuple type '[string, number]' of length '2' has no element at index '5'.
+// console.log(x[5].toString());
