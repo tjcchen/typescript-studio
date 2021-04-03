@@ -1,24 +1,34 @@
 // Basic typescript types
+//-------------
 // 1. Booelan
+//-------------
 var isDone = false;
+//------------
 // 2. Number
+//------------
 var decimal = 6;
 var hex = 0xf00d;
 var binary = 10;
 var octal = 484;
 // let big: bigint = 100n;
+//------------
 // 3. String
+//------------
 var color = 'blue';
 color = 'red';
 var fullname = 'Kobe Bryant';
 var age = 37;
 var sentence = "Hello, my name is " + fullname + "\n  I'll be " + (age + 1) + " years old next month.\n";
+//-----------
 // 4. Array
+//-----------
 // Approach1: use the type of element followed by [] to denote an array of that element type:
 var list = [1, 2, 3];
 // Approach2: use a generic array type, Array<elemType>:
 var list1 = [1, 2, 3];
+//-----------
 // 5. Tuple
+//-----------
 // Tuple types allow you to express an array with a fixed number of elements whose types are known,
 // but need not be the same
 // eg1: a value as a pair of a string and a number
@@ -36,16 +46,40 @@ console.log(x[0].substring(1)); // print out 'ello'
 // x[3] = 'world';
 // error: Tuple type '[string, number]' of length '2' has no element at index '5'.
 // console.log(x[5].toString());
+//-----------
 // 6. Enum
+//-----------
 var Color;
 (function (Color) {
     Color[Color["Red"] = 1] = "Red";
     Color[Color["Green"] = 2] = "Green";
-    Color["Blue"] = "blue";
+    Color["Blue"] = "blue"; // assign values to enum
 })(Color || (Color = {}));
 ;
 var c = Color.Blue;
 console.log(c); // 4
 var colorName = Color[2];
 console.log(colorName); // 'Green'
-console.log(Color.Blue);
+console.log(Color.Blue); // blue
+//-------------
+// 7. unknown
+//-------------
+var notSure = 4;
+notSure = 'maybe a string instead';
+// ok, definitely a boolean
+notSure = false;
+console.log(notSure);
+// Error: 'maybe' can be a string, object, boolean, undefined, or other type
+// const aNumber: number = maybe;
+if (maybe === true) {
+    // TypeScript knows that maybe is a boolean now
+    var aBoolean = maybe;
+    // So, it cannot be a string
+    // const aString: string = maybe; // Error: Type 'boolean' is not assignable to type 'string'.
+}
+if (typeof maybe === 'string') {
+    // Typescript knows that maybe is a string
+    var aString = maybe;
+    // So, it cannot be a boolean
+    // const aBoolean: boolean = maybe; // Error: Type 'string' is not assignable to type 'boolean'.
+}
