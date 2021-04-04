@@ -69,17 +69,23 @@ notSure = 'maybe a string instead';
 // ok, definitely a boolean
 notSure = false;
 console.log(notSure);
-// Error: 'maybe' can be a string, object, boolean, undefined, or other type
-// const aNumber: number = maybe;
-if (maybe === true) {
-    // TypeScript knows that maybe is a boolean now
-    var aBoolean = maybe;
-    // So, it cannot be a string
-    // const aString: string = maybe; // Error: Type 'boolean' is not assignable to type 'string'.
-}
-if (typeof maybe === 'string') {
-    // Typescript knows that maybe is a string
-    var aString = maybe;
-    // So, it cannot be a boolean
-    // const aBoolean: boolean = maybe; // Error: Type 'string' is not assignable to type 'boolean'.
-}
+var str = getValue('myString');
+console.log(str);
+// Unlike unknown, variables of type any allow you to access arbitrary properties,
+// even ones that don't exist. These properties include functions, and TypeScript
+// will not check their existence or type.
+// compare1:
+var looselyTyped = 4;
+// ok, ifItExists might exist at runtime
+looselyTyped.ifItExists();
+// ok, toFixed exists (but the compiler doesn't check)
+looselyTyped.toFixed();
+// compare2:
+var strictlyTyped = 4;
+// strictlyTyped.toFixed(); // Cast error on typechecking
+// The 'any' will continue to propagate through your objects
+// But remember that all the convenience of any comes at the cost of losing type safety.
+// Type safety is one of the main motivations for using Typescript and you
+// should try to avoid using 'any' when not necessary
+var looselyTyped2 = {};
+var d = looselyTyped2.a.b.c.d;
