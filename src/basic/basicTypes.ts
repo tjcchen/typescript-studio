@@ -150,6 +150,10 @@ unusable = null;
 // Much like void, they are not extremely useful on their own.
 // However, when using the --strctNullChecks flag, null and undefined are only 
 // assignable to unknown, any and their respective types. This helps avoid many common errors.
+
+// As a note: we encourage the use of --strictNullChecks when possible, but for the purposes
+// of this handbook, we will assume it is turned off.
+
 let u: undefined = undefined;
 let n: null = null;
 
@@ -157,5 +161,4 @@ let n: null = null;
 
 // union type
 let unionType: string | null | undefined;
-
 unionType = null;
