@@ -96,6 +96,19 @@ var d = looselyTyped2.a.b.c.d;
 function warnUser() {
     console.log('This is my warning message');
 }
+// declaring variables of type 'void' is not useful because you can only assign null or undefined to them.
 var unusable = undefined;
 // ok if `--strictNullChecks` is not given
 unusable = null;
+//---------------------
+// 9. null and undefined
+//---------------------
+// Much like void, they are not extremely useful on their own.
+// However, when using the --strctNullChecks flag, null and undefined are only 
+// assignable to unknown, any and their respective types. This helps avoid many common errors.
+var u = undefined;
+var n = null;
+// u = ''; // cast error
+// union type
+var unionType;
+unionType = null;
