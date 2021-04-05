@@ -143,3 +143,19 @@ function warnUser(): void {
 let unusable: void = undefined;
 // ok if `--strictNullChecks` is not given
 unusable = null;
+
+//---------------------
+// 9. null and undefined
+//---------------------
+// Much like void, they are not extremely useful on their own.
+// However, when using the --strctNullChecks flag, null and undefined are only 
+// assignable to unknown, any and their respective types. This helps avoid many common errors.
+let u: undefined = undefined;
+let n: null = null;
+
+// u = ''; // cast error
+
+// union type
+let unionType: string | null | undefined;
+
+unionType = null;
