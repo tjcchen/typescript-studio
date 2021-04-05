@@ -130,3 +130,16 @@ let strictlyTyped: unknown = 4;
 // should try to avoid using 'any' when not necessary
 let looselyTyped2: any = {};
 let d = looselyTyped2.a.b.c.d;
+
+//--------------
+// 8. void
+//--------------
+// void: the absence of having any type at all - no return type
+function warnUser(): void {
+  console.log('This is my warning message');
+}
+
+// declaring variables of type 'void' is not useful because you can only assign null or undefined to them.
+let unusable: void = undefined;
+// ok if `--strictNullChecks` is not given
+unusable = null;

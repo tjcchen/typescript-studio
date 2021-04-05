@@ -89,3 +89,13 @@ var strictlyTyped = 4;
 // should try to avoid using 'any' when not necessary
 var looselyTyped2 = {};
 var d = looselyTyped2.a.b.c.d;
+//--------------
+// 8. void
+//--------------
+// void: the absence of having any type at all - no return type
+function warnUser() {
+    console.log('This is my warning message');
+}
+var unusable = undefined;
+// ok if `--strictNullChecks` is not given
+unusable = null;
