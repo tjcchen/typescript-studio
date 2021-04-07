@@ -106,9 +106,29 @@ unusable = null;
 // Much like void, they are not extremely useful on their own.
 // However, when using the --strctNullChecks flag, null and undefined are only 
 // assignable to unknown, any and their respective types. This helps avoid many common errors.
+// As a note: we encourage the use of --strictNullChecks when possible, but for the purposes
+// of this handbook, we will assume it is turned off.
 var u = undefined;
 var n = null;
 // u = ''; // cast error
 // union type
 var unionType;
 unionType = null;
+//----------
+// 10. never
+//----------
+// The 'never' type represents the type of values that never occur.
+// eg: 'never' is the return type for a function expression or an arrow function expression
+// that always throws an exception or one that never returns
+// eg1: function returning never must not have a reachable end point
+function error(message) {
+    throw new Error(message);
+}
+// eg2: Inferred return type is never
+function fail() {
+    return error('something failed');
+}
+// eg3: function returning never must not have a reachable end point
+function infiniteLoop() {
+    while (true) { }
+}

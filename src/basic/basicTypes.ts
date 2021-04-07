@@ -162,3 +162,25 @@ let n: null = null;
 // union type
 let unionType: string | null | undefined;
 unionType = null;
+
+//----------
+// 10. never
+//----------
+// The 'never' type represents the type of values that never occur.
+// eg: 'never' is the return type for a function expression or an arrow function expression
+// that always throws an exception or one that never returns
+
+// eg1: function returning never must not have a reachable end point
+function error(message: string): never {
+  throw new Error(message);
+}
+
+// eg2: Inferred return type is never
+function fail() {
+  return error('something failed');
+}
+
+// eg3: function returning never must not have a reachable end point
+function infiniteLoop(): never {
+  while (true) {}
+}
