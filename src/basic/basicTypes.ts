@@ -184,3 +184,13 @@ function fail() {
 function infiniteLoop(): never {
   while (true) {}
 }
+
+// Enum Example
+enum Occupation {
+  Teacher,
+  Worker,
+  Driver
+};
+
+console.log(Occupation[Occupation.Worker]); // obtain value from Occupation worker
+console.log(Occupation.Driver);

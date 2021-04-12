@@ -132,3 +132,13 @@ function fail() {
 function infiniteLoop() {
     while (true) { }
 }
+// Enum Example
+var Occupation;
+(function (Occupation) {
+    Occupation[Occupation["Teacher"] = 0] = "Teacher";
+    Occupation[Occupation["Worker"] = 1] = "Worker";
+    Occupation[Occupation["Driver"] = 2] = "Driver";
+})(Occupation || (Occupation = {}));
+;
+console.log(Occupation[Occupation.Worker]); // obtain value from Occupation worker
+console.log(Occupation.Driver);
