@@ -142,3 +142,7 @@ var Occupation;
 ;
 console.log(Occupation[Occupation.Worker]); // obtain value from Occupation worker
 console.log(Occupation.Driver);
+// ok
+create({ prop: 0 });
+create(null);
+create(undefined);

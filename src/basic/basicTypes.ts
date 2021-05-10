@@ -194,3 +194,16 @@ enum Occupation {
 
 console.log(Occupation[Occupation.Worker]); // obtain value from Occupation worker
 console.log(Occupation.Driver);
+
+//---------
+// 11. Object
+//---------
+// With object type, Apis like Object.create() can be better represented:
+declare function create(o: object | null): void;
+
+// ok
+create({ prop: 0 });
+create(null);
+// undefined is not a subtype of null
+create(undefined);
+// create(42);
