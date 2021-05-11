@@ -145,4 +145,17 @@ console.log(Occupation.Driver);
 // ok
 create({ prop: 0 });
 create(null);
+// undefined is not a subtype of null
 create(undefined);
+// create(42);
+//--------------------
+// 12. type assertions
+//--------------------
+// eg1: as syntax - (someValue as string), jsx need to utilize this approach
+var someValue = "this is a string";
+var strLength = someValue.length;
+console.log(strLength);
+// eg2: angle-bracket syntax - (<string>someValue)
+var someValue2 = "this is another string";
+var strLength2 = someValue2.length;
+console.log(strLength2);

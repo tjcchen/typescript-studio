@@ -207,3 +207,16 @@ create(null);
 // undefined is not a subtype of null
 create(undefined);
 // create(42);
+
+//--------------------
+// 12. type assertions
+//--------------------
+// eg1: as syntax - (someValue as string), jsx need to utilize this approach
+let someValue: unknown = "this is a string";
+let strLength: number = (someValue as string).length;
+console.log(strLength);
+
+// eg2: angle-bracket syntax - (<string>someValue)
+let someValue2: unknown = "this is another string";
+let strLength2: number = (<string>someValue2).length;
+console.log(strLength2);
