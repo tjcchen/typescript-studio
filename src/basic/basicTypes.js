@@ -159,3 +159,7 @@ console.log(strLength);
 var someValue2 = "this is another string";
 var strLength2 = someValue2.length;
 console.log(strLength2);
+// utilize number, string, boolean, object, symbol in ts
+function reverse(s) {
+    return s.split('').reverse().join('');
+}

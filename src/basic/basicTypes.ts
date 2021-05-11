@@ -220,3 +220,8 @@ console.log(strLength);
 let someValue2: unknown = "this is another string";
 let strLength2: number = (<string>someValue2).length;
 console.log(strLength2);
+
+// utilize number, string, boolean, object, symbol in ts
+function reverse(s: string): string {
+  return s.split('').reverse().join('');
+}
