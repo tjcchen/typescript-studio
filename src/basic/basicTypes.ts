@@ -225,3 +225,5 @@ console.log(strLength2);
 function reverse(s: string): string {
   return s.split('').reverse().join('');
 }
+
+reverse('hello world');
