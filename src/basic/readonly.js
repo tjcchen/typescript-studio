@@ -5,4 +5,8 @@ var p1 = { x: 10, y: 20 };
 var a = [1, 2, 3, 4];
 var ro = a;
 // ro[0] = 12; // error
+// ro.push(5); // error
+// ro.length = 200; // error
+// a = ro; // error, assigning the ReadOnlyArray back to a normal array is illegal
+a = ro; // but you can still override it with a type assertion
 console.log(ro);

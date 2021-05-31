@@ -14,4 +14,10 @@ let a: number[] = [1, 2, 3, 4];
 let ro: ReadonlyArray<number> = a;
 
 // ro[0] = 12; // error
+// ro.push(5); // error
+// ro.length = 200; // error
+
+// a = ro; // error, assigning the ReadOnlyArray back to a normal array is illegal
+a = ro as number[]; // but you can still override it with a type assertion
+
 console.log(ro);
