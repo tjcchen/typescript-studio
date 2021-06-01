@@ -21,3 +21,46 @@ let ro: ReadonlyArray<number> = a;
 a = ro as number[]; // but you can still override it with a type assertion
 
 console.log(ro);
+
+//----------------------------------------------------------
+// note: variables use const whereas properties use readonly
+//----------------------------------------------------------
+
+//-----------
+// example1
+//-----------
+interface SquareConfig {
+  color?: string;
+  width?: number;
+}
+
+function createSquare(config: SquareConfig): { color: string, area: number } {
+  return {
+    color: config.color || 'red',
+    area: config.width ? config.width * config.width : 20
+  };
+}
+// 'colour' fails silently
+// let mySquare = createSquare({ colour: 'red', width: 100 });
+
+// Fix approach1: note: as syntax can fix above problem simply
+let mySquare = createSquare({ colour: 'red', width: 100 } as SquareConfig);
+
+console.log(mySquare);
+
+// Fix approach2: index signature
+// SquareConfig2 can have any number of properties
+interface SquareConfig2 {
+  color?: string;
+  width?: number;
+  [propName: string]: any;
+}
+function createSquare2(config: SquareConfig2): { color: string, area: number } {
+  return {
+    color: config.color || 'red',
+    area: config.width ? config.width * config.width : 20
+  };
+}
+let squareOptions = { colour: 'black', width: 200 };
+let yourSquare = createSquare2(squareOptions);
+console.log(yourSquare);
