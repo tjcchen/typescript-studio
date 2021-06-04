@@ -1,4 +1,5 @@
 // Function Types
+// Utilize interface to describe function
 interface SearchFunc {
   (source: string, substring: string): boolean;
 }
