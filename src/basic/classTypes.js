@@ -4,11 +4,15 @@ var Clock = /** @class */ (function () {
         console.log('h: ', h);
         console.log('m: ', m);
     }
+    Clock.prototype.setTime = function (date) {
+        this.currentTime = date;
+    };
     Clock.prototype.getTime = function () {
-        return this.currentTime;
+        return this.currentTime.getTime();
     };
     return Clock;
 }());
 var clock = new Clock(10, 30);
+clock.setTime(new Date());
 var curTime = clock.getTime();
-console.log(curTime);
+console.log(curTime); // current timestamp
