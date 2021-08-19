@@ -1,0 +1,23 @@
+{
+  "name": "typescript-studio",
+  "version": "1.0.0",
+  "description": "A repo for recording typescript relevant practices.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjcchen/typescript-studio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjcchen/typescript-studio/issues"
+  },
+  "homepage": "https://github.com/tjcchen/typescript-studio#readme",
+  "dependencies": {
+    "typedoc": "^0.21.6"
+  }
+}
